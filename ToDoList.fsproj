@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <AssemblyName>ToDoList.App</AssemblyName>
+        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Giraffe" Version="5.0.0-rc-6" />
+        <PackageReference Include="Giraffe.ViewEngine" Version="1.3.*" />
+        <PackageReference Include="Ply" Version="0.3.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.*" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
+        <PackageReference Include="JsonApiSerializer" Version="1.7.4" />
+        <PackageReference Include="FSharp.Data" Version="3.3.3" />
+        <PackageReference Include="Dapper" Version="2.0.78" />
+        <PackageReference Include="Dapper.FSharp" Version="2.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="Exceptions.fs" />
+        <Compile Include="Authorization.fs" />
+        <Compile Include="Transaction.fs" />
+        <Compile Include="ToDoHandler.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest"/>
+        <None Include="web.config" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="pages\index.html" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="WebRoot\**\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>

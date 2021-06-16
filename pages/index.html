@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            #title {
+                margin-bottom: 0;
+            }
+            #openapi {
+                margin-top: 5px;
+            }
+        </style>
+        <title>ToDo Api</title>
+    </head>
+    <body>
+        <h1 id="title">Welcome in ToDo Api powered by Giraffe (F#)</h1>
+        <h3 id="openapi">(swagger/openapi integration is on it's way)</h3>
+        </br>
+        
+        <h2>It uses "Basic" schema for authentication, please, contact the correspondant to a the token</h2>
+        <h2>The responses are formatted in <a href="https://jsonapi.org/">JSON API</a> standard</h2>
+    
+    
+        <h2>ToDo api has the following endpoints</h2>
+        <ul>
+            <li>GET /todo - returns list of todos</li>
+            <li>GET /todo/{idTodo} returns single todo with given id</li>
+            <li>POST /todo creates todo taken from the body of the request</li>
+            <li>PUT /todo update(mutate) todo taken from the body of the request</li>
+            <li>DELETE /todo/1 deletes todo with given id</li>
+        </ul>
+    
+    
+        <h3>Sample request: </h3>
+        <p>curl --location --request GET '/todo/1' --header 'Authorization: Basic YzQ2ZWVhM2QtY2MxNi00MG....'</p>
+        <p>
+            "jsonapi": {
+                "version": "1.0.0",
+                "meta": null
+            },
+            "data": {
+                "id": 1,
+                "name": "New Task",
+                "description": "This task was added by API call",
+                "dueDate": "2020-09-19T02:05:49.933",
+                "isDone": true
+            },
+            "included": null
+        </p>
+    </body>
+</html>
