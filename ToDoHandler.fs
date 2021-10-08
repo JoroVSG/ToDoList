@@ -35,7 +35,7 @@ type ToDoDTO =
         else None
     
 let getToDoById = fun id (payload: TransactionPayload) ->
-    let (conn, trans) = payload
+    let conn, trans = payload
     task {
         let getToDoCE = select {
             table "ToDos1"
@@ -48,7 +48,7 @@ let getToDoById = fun id (payload: TransactionPayload) ->
     }
     
 let getToDoList = fun (payload: TransactionPayload) ->
-    let (conn, trans) = payload
+    let conn, trans = payload
     task {
         let getToDoCE = select {
             table "ToDos1"
@@ -70,7 +70,7 @@ let getToDoHandler = fun id payload _ ->
     }
     
 let createToDo = fun todo (payload: TransactionPayload) ->
-    let (conn, trans) = payload
+    let conn, trans = payload
     
     task {
         let insertCE = insert {
@@ -88,7 +88,7 @@ let createToDo = fun todo (payload: TransactionPayload) ->
     }
     
 let updateToDo = fun todo (payload: TransactionPayload) ->
-    let (conn, trans) = payload
+    let conn, trans = payload
     task {
         let updateCE = update {
             table "ToDos1"
@@ -134,7 +134,7 @@ let createToDoHandler = fun payload (ctx: HttpContext) ->
     }
 
 let deleteToDo = fun id (payload: TransactionPayload) ->
-    let (conn, trans) = payload
+    let conn, trans = payload
     task {
         let deleteCE = delete {
             table "ToDos1"
